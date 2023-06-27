@@ -247,9 +247,9 @@ class PeerConnectionObserver implements PeerConnection.Observer {
         peerConnection.getStats(new RTCStatsCollectorCallback() {
             @Override
             public void onStatsDelivered(RTCStatsReport rtcStatsReport) {
-              longInfo("RTC Stats: \n" + rtcStatsReport.toString());
+                Log.d("RTC Stats: \n" + rtcStatsReport.toString());
             }
-            promise.resolve(StringUtils.statsToJSON(rtcStatsReport)); 
+            // promise.resolve(StringUtils.statsToJSON(rtcStatsReport)); 
         });
     }
 
