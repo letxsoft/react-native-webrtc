@@ -244,7 +244,13 @@ class PeerConnectionObserver implements PeerConnection.Observer {
 
     void getStats(Promise promise) {
         Log.d(TAG, "peerConnection.getStats check from android");
-        peerConnection.getStats(rtcStatsReport -> { promise.resolve(StringUtils.statsToJSON(rtcStatsReport)); });
+        peerConnection.getStats(new RTCStatsCollectorCallback() {
+            @Override
+            public void onStatsDelivered(RTCStatsReport rtcStatsReport) {
+              longInfo("RTC Stats: \n" + rtcStatsReport.toString());
+            }
+            promise.resolve(StringUtils.statsToJSON(rtcStatsReport)); 
+        });
     }
 
     /**
