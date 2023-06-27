@@ -443,8 +443,8 @@ export default class RTCPeerConnection extends defineCustomEventTarget(...PEER_C
     }
 
     async getStats(selector?: MediaStreamTrack) {
-        log.debug(`${this._pcId} getStats xxxxxx`);
-        console.log('booooo hhhhhhh');
+        log.debug(`${this._pcId} getStats yyyyyy`);
+        console.log('GetStats Data =>', selector);
 
         if (!selector) {
             const data = await WebRTCModule.peerConnectionGetStats(this._pcId);
