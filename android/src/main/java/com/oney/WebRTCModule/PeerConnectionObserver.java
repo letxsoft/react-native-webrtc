@@ -252,7 +252,7 @@ class PeerConnectionObserver implements PeerConnection.Observer {
      * @param streamType "outbound-rtp" for sender or "inbound-rtp" for receiver
      */
     void getFilteredStats(String trackIdentifier, boolean isReceiver, Promise promise) {
-        Log.d(TAG, "peerConnection.getFilteredStats check from android");
+        Log.d(TAG, "peerConnection.getFilteredStats xxxxxxxx check from android");
         peerConnection.getStats(rtcStatsReport -> {
             Map<String, RTCStats> statsMap = rtcStatsReport.getStatsMap();
             Set<RTCStats> filteredStats = new HashSet<>();
